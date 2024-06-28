@@ -43,10 +43,10 @@ spec:
   - host: web.demo
     http:
       paths:
-      - path: :30080
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: webhtml-demo
             port:
-              number: 80
+              number: 30080
