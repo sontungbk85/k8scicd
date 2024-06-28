@@ -29,7 +29,7 @@ spec:
   ports:
   - port: 80
     targetPort: 80
-    nodePort: 30080  # Chỉ định NodePort cụ thể    
+    nodePort: 80  # Chỉ định NodePort cụ thể    
   selector:
     app: footballprovtc
 ---
@@ -49,4 +49,4 @@ spec:
           service:
             name: webhtml-demo
             port:
-              number: 30080
+              number: 80
