@@ -28,7 +28,8 @@ spec:
   type: LoadBalancer
   ports:
   - port: 80
-    targetPort: 80    
+    targetPort: 80
+    nodePort: 30080  # Chỉ định NodePort cụ thể    
   selector:
     app: footballprovtc
 ---
@@ -42,7 +43,7 @@ spec:
   - host: web.demo
     http:
       paths:
-      - path: /
+      - path: :30080
         pathType: Prefix
         backend:
           service:
