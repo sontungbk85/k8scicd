@@ -4,7 +4,7 @@ metadata:
   name: webhtml-demo
   namespace: ingress-nginx 
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: footballprovtc
@@ -17,7 +17,7 @@ spec:
       - name: footballprovtc
         image: sontungbk85/k8scicd:latest
         ports:
-        - containerPort: 5000
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -28,7 +28,7 @@ spec:
   type: ClusterIP
   ports:
   - port: 80
-    targetPort: 5000    
+    targetPort: 80    
   selector:
     app: footballprovtc
 
